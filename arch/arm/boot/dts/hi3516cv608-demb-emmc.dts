@@ -1,0 +1,12 @@
+/*
+ * Copyright (c) HiSilicon (Shanghai) Technologies Co., Ltd. 2020-2023. All rights reserved.
+ */
+#include "hi3516cv608-demb.dts"
+
+&mmc0 {
+	status = "okay";
+};
+
+&sdio0 {
+	status = "disabled";
+};

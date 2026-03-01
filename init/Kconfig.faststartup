@@ -1,0 +1,69 @@
+config BSP_FAST_STARTUP
+	bool "for fast startup usage"
+	select MINI_OPT
+	depends on ARCH_BSP
+
+if BSP_FAST_STARTUP
+config STARTUP_PARALLEL_CREATION_NODE_OPT
+	bool "parallize node creation"
+config STARTUP_PARALLEL_OPT
+	bool "parallize init module"
+	if STARTUP_PARALLEL_OPT
+	config DEPENDENCIES
+		bool "Use dependency based initialization sequence (DO NOT USE)"
+		select ANNOTATED_INITCALLS
+		depends on STARTUP_PARALLEL_OPT
+		help
+		  This will likely crash your kernel at startup. You have been warned.
+		  That means you should make sure you have a working backup kernel
+		  you can boot from in case the kernel with this feature turned on
+		  crashes.
+		  In order to benefit from this feature, statically linked drivers
+		  have to provide dependencies.
+	config DEPENDENCIES_PARALLEL
+		bool "Call annotated initcalls in parallel"
+		depends on DEPENDENCIES
+		help
+		  Calculates which (annotated) initcalls can be called in parallel
+		  and calls them using multiple threads.
+	config DEPENDENCIES_THREADS
+		int "Number of threads to use for parallel initialization"
+		depends on DEPENDENCIES_PARALLEL
+		default 0
+		help
+		  0 means the number of threads used for parallel initialization
+		  of drivers equals the number of online CPUs.
+		  1 means the threaded initialization is disabled.
+	endif
+endif
+
+config MINI_OPT
+	bool "for miniaturization optimize usage"
+
+if MINI_OPT
+config SYSFS_MINI_OPT
+	bool "sysfs file creation optimization"
+	default y
+	help
+	  Optimize sysfs file node creation, only disabling those unnecessary 
+	  for function or debugging features.
+config KUEVENT_MINI_OPT
+	bool "kuevent diabled before finshing boot"
+	default y
+	help
+	  Optimize uevent notification, only keep those required by the scenario,
+	  such as the SD card, USB block subsystem device insertion and removal..
+config BOOTSTAGE_PRINTK_MINI_OPT
+	bool "diable log to mem"
+	default y
+	help
+	  Generally, printk can be configured based on the priority to disable serial port output.
+	  However, it still prints to the memory, which still consumes  memory and performance.
+	  Therefore, performance and memory can be optimized by completely disabling printing.
+config SYSFS_SLAB_MINI_OPT
+	bool "sysfs slab debug disable control"
+	default y
+	help
+	  The sysfs saves the slab allocation information to facilitate debugging.
+	  In the optimized fastboot version, the function can be disabled and enabled as required.
+endif

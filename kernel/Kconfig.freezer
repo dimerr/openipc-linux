@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: GPL-2.0-only
+config FREEZER
+	def_bool PM_SLEEP || CGROUP_FREEZER
+
+if ARCH_BSP
+config ENABLE_IPREC_DEBUG
+	bool "Enable iprec debug"
+	default y
+	help
+	  This is used for iprec debug printing.
+endif

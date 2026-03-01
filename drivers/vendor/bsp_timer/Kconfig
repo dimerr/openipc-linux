@@ -1,0 +1,6 @@
+config BSP_TIMER
+	bool "Support bsp timer as wakeup source"
+	default no
+	depends on PM
+	help
+	  Support bsp timer as wakeup source

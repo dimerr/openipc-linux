@@ -1,0 +1,64 @@
+if ARCH_BSP
+
+menu "Hisilicon BSP platform type"
+
+config BSP_ZRELADDR
+	depends on ARCH_BSP
+	depends on ARCH_MULTI_V7
+	hex 'bsp zreladdr'
+	default "0x40020000" if ARCH_HI3516CV610_FAMILY
+
+config ARCH_HI3516CV610
+	bool "Vendor hi3516cv610 platform"
+	depends on ARCH_BSP
+	select ARCH_HI3516CV610_FAMILY
+	help
+		Support for Vendor HI3516CV610 platform
+
+config ARCH_HI3516CV608
+	bool "Vendor hi3516cv608 platform"
+	depends on ARCH_BSP
+	select ARCH_HI3516CV610_FAMILY
+	help
+		Support for Vendor HI3516CV608 platform
+
+config ARCH_HI3516CV610_FAMILY
+	bool "Vendor hi3516cv610 family"
+	depends on ARCH_BSP
+	depends on ARCH_MULTI_V7
+	select HAVE_ARM_ARCH_TIMER
+	select RESET_BSP
+	help
+		Support for Hisilicon HI3516CV610 Soc family.
+
+
+config SOC_FAMILY
+	string
+	default "hi3516cv610" if ARCH_HI3516CV610_FAMILY
+
+config VENDOR_RAMDISK_ZERO_COPY
+       bool "Vendor ramdisk zero copy"
+       default n
+       depends on ROMFS_FS && BLK_DEV_INITRD && BLK_DEV_RAM && ARCH_BSP
+       help
+         Select this to reduce copy ramdisk times in DDR
+
+config VENDOR_TIMER_TRIGGER_RCU
+       bool "Fast trigger rcu"
+       default n
+       depends on ARCH_BSP
+       help
+         Select this to reduce boot time when RCU takes a lot time.  If
+         CONFIG_HIGH_RES_TIMERS is enabled, the RCU time consumption can
+         be reduced to almost 0, but be careful to open CONFIG_HIGH_RES_TIMERS!
+
+config HI35XXVXX_KOL
+	bool "HI35XXVXX kol optimized"
+	default y
+	depends on ARCH_BSP && PM_SLEEP
+	help
+	 KOL feature customization and optimization options for the Hi35xxvxx project
+endmenu
+
+endif
+

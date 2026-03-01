@@ -1,0 +1,8 @@
+
+if ARCH_BSP
+config RESET_BSP
+	bool "Vendor Reset Controller Driver"
+	select RESET_CONTROLLER
+	help
+	  Build reset controller driver for Vendor device chipsets.
+endif

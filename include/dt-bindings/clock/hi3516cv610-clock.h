@@ -1,0 +1,137 @@
+/*
+ * Copyright (c) 2016-2017 HiSilicon Technologies Co., Ltd.
+ *
+ * This program is free software; you can redistribute  it and/or modify it
+ * under  the terms of  the GNU General Public License as published by the
+ * Free Software Foundation;  either version 2 of the  License, or (at your
+ * option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+#ifndef __DTS_HI3516CV610_CLOCK_H
+#define __DTS_HI3516CV610_CLOCK_H
+
+/* clk in HI3516CV610 CRG */
+#define HI3516CV610_FIXED_2400M    1
+#define HI3516CV610_FIXED_1200M    2
+#define HI3516CV610_FIXED_1188M    3
+#define HI3516CV610_FIXED_896M     4
+#define HI3516CV610_FIXED_800M     5
+#define HI3516CV610_FIXED_792M     6
+#define HI3516CV610_FIXED_786M     7
+#define HI3516CV610_FIXED_750M     8
+#define HI3516CV610_FIXED_700M     9
+#define HI3516CV610_FIXED_672M     10
+#define HI3516CV610_FIXED_600M     11
+#define HI3516CV610_FIXED_594M     12
+#define HI3516CV610_FIXED_560M     13
+#define HI3516CV610_FIXED_500M     14
+#define HI3516CV610_FIXED_475M     15
+#define HI3516CV610_FIXED_396M     16
+#define HI3516CV610_FIXED_300M     17
+#define HI3516CV610_FIXED_297M     18
+#define HI3516CV610_FIXED_257M     19
+#define HI3516CV610_FIXED_250M     20
+#define HI3516CV610_FIXED_200M     21
+#define HI3516CV610_FIXED_198M     22
+#define HI3516CV610_FIXED_187P_5M   23
+#define HI3516CV610_FIXED_150M     24
+#define HI3516CV610_FIXED_148P_5M   25
+#define HI3516CV610_FIXED_134M     26
+#define HI3516CV610_FIXED_108M     27
+#define HI3516CV610_FIXED_100M     28
+#define HI3516CV610_FIXED_99M      29
+#define HI3516CV610_FIXED_74P_25M   30
+#define HI3516CV610_FIXED_72M      31
+#define HI3516CV610_FIXED_64M      32
+#define HI3516CV610_FIXED_60M      33
+#define HI3516CV610_FIXED_54M      34
+#define HI3516CV610_FIXED_50M      35
+#define HI3516CV610_FIXED_49P_5M    36
+#define HI3516CV610_FIXED_37P_125M  37
+#define HI3516CV610_FIXED_36M      38
+#define HI3516CV610_FIXED_27M      39
+#define HI3516CV610_FIXED_25M      40
+#define HI3516CV610_FIXED_24M      41
+#define HI3516CV610_FIXED_12M      42
+#define HI3516CV610_FIXED_12P_288M  43
+#define HI3516CV610_FIXED_6M       44
+#define HI3516CV610_FIXED_3M       45
+#define HI3516CV610_FIXED_1P_6M    46
+#define HI3516CV610_FIXED_1M       146
+#define HI3516CV610_FIXED_400K     47
+#define HI3516CV610_FIXED_100K     48
+#define HI3516CV610_FIXED_237P_5M 49
+#define HI3516CV610_FIXED_264M 50
+
+/* mux clocks */
+#define HI3516CV610_FMC_MUX         51
+#define HI3516CV610_UART0_MUX        52
+#define HI3516CV610_UART1_MUX        53
+#define HI3516CV610_UART2_MUX        54
+#define HI3516CV610_I2C0_MUX        55
+#define HI3516CV610_I2C1_MUX        56
+#define HI3516CV610_I2C2_MUX        57
+#define HI3516CV610_MMC0_MUX        58
+#define HI3516CV610_MMC1_MUX        59
+#define HI3516CV610_MMC2_MUX        60
+#define HI3516CV610_ETH_MUX         61
+#define HI3516CV610_USB2_MUX        62
+
+/* gate clocks */
+#define HI3516CV610_UART0_CLK       63
+#define HI3516CV610_UART1_CLK       64
+#define HI3516CV610_UART2_CLK       65
+#define HI3516CV610_FMC_CLK         66
+#define HI3516CV610_ETH0_CLK        67
+#define HI3516CV610_EDMAC_AXICLK    68
+#define HI3516CV610_EDMAC_APBCLK    69
+#define HI3516CV610_SPI0_CLK        70
+#define HI3516CV610_SPI1_CLK        71
+#define HI3516CV610_MMC0_CLK        72
+#define HI3516CV610_MMC1_CLK        73
+#define HI3516CV610_MMC2_CLK        74
+#define HI3516CV610_I2C0_CLK        75
+#define HI3516CV610_I2C1_CLK        76
+#define HI3516CV610_I2C2_CLK        77
+#define HI3516CV610_USB2_BUS_CLK        78
+#define HI3516CV610_USB2_REF_CLK        79
+#define HI3516CV610_USB2_UTMI_CLK       80
+#define HI3516CV610_USB2_PHY_APB_CLK    81
+#define HI3516CV610_USB2_PHY_PLL_CLK    82
+#define HI3516CV610_USB2_PHY_XO_CLK     83
+#define HI3516CV610_MMC0_HCLK           84
+#define HI3516CV610_MMC1_HCLK           85
+#define HI3516CV610_FEPHY_CLK       86
+#define HI3516CV610_GPIO0_CLK 87
+#define HI3516CV610_GPIO1_CLK 88
+#define HI3516CV610_GPIO2_CLK 89
+#define HI3516CV610_GPIO3_CLK 90
+#define HI3516CV610_GPIO4_CLK 91
+#define HI3516CV610_GPIO5_CLK 92
+#define HI3516CV610_GPIO6_CLK 93
+#define HI3516CV610_GPIO7_CLK 94
+#define HI3516CV610_GPIO8_CLK 95
+#define HI3516CV610_GPIO9_CLK 96
+#define HI3516CV610_GPIO10_CLK 97
+#define HI3516CV610_SYSAXI_CLK  98
+#define HI3516CV610_SYSAPB_CLK  99
+#define HI3516CV610_PWM1_CLK    100
+#define HI3516CV610_PWM1_MUX    101
+#define HI3516CV610_LSADC_CLK   102
+#define HI3516CV610_TIMER0_APBCLK    101
+#define HI3516CV610_TIMER0   102
+#define HI3516CV610_TIMER1_APBCLK    101
+#define HI3516CV610_TIMER1   102
+
+#define HI3516CV610_NR_CLKS 128
+
+#endif

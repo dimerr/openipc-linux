@@ -1,0 +1,19 @@
+#
+# hleth family network device configuration
+#
+
+menuconfig FEMAC
+	tristate "hleth(switch fabric) family network device support"
+	select PHYLIB
+	help
+	  This selects the hleth family network device.
+
+if FEMAC
+
+config HLETH_MAX_RX_POOLS
+	int "hleth max rx pool size"
+	default "1024"
+	help
+	  hleth max static rx pool size.
+
+endif

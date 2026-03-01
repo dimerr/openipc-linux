@@ -1,0 +1,177 @@
+/*
+ * Copyright (c) 2013-2014 Linaro Ltd.
+ * Copyright (c) 2015-2017 HiSilicon Technologies Co., Ltd.
+ *
+ * This program is free software; you can redistribute  it and/or modify it
+ * under  the terms of  the GNU General  Public License as published by the
+ * Free Software Foundation;  either version 2 of the  License, or (at your
+ * option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+/dts-v1/;
+
+/ {
+	model = "Hisilicon Hi3516CV608 DEMO Board";
+	compatible = "hisilicon,hi3516cv608";
+
+	memory {
+		device_type = "memory";
+		reg = <0x40000000 0xC0000000>;
+	};
+};
+#include "hi3516cv608.dtsi"
+#include "hi3516cv608_family_usb.dtsi"
+&uart0 {
+	status = "okay";
+};
+
+&uart1 {
+	status = "okay";
+};
+
+&uart2 {
+	status = "okay";
+};
+
+&i2c_bus0 {
+    status = "okay";
+    clock-frequency = <400000>;
+};
+
+&i2c_bus1 {
+    status = "okay";
+    clock-frequency = <400000>;
+};
+
+&i2c_bus2 {
+    status = "okay";
+    clock-frequency = <400000>;
+};
+
+&spi_bus0{
+    status = "okay";
+
+    spidev@0 {
+        compatible = "rohm,dh2228fv";
+        reg = <0>;
+        pl022,interface = <0>;
+        pl022,com-mode = <0>;
+        spi-max-frequency = <25000000>;
+    };
+
+    spidev@1 {
+        compatible = "rohm,dh2228fv";
+        reg = <1>;
+        pl022,interface = <0>;
+        pl022,com-mode = <0>;
+        spi-max-frequency = <25000000>;
+    };
+};
+
+&spi_bus1 {
+	status = "okay";
+
+	spidev@0 {
+		compatible = "rohm,dh2228fv";
+		reg = <0>;
+		pl022,interface = <0>;
+		pl022,com-mode = <0>;
+		spi-max-frequency = <25000000>;
+	};
+};
+
+&mdio0 {
+	phy-reset-delays-us = <10000 20000 150000>;
+	status = "disabled";
+	phy0: ethernet-phy@1 {
+		// reg = <0>;
+	};
+};
+
+&femac0 {
+	mac-address = [00 00 00 00 00 00];
+	phy-mode = "mii";
+	phy-handle = <&phy0>;
+	status = "disabled";
+};
+
+&sfc {
+	sfc@0 {
+		   compatible = "jedec,spi-nor";
+		   reg = <0>;
+		   spi-max-frequency = <200000000>;
+	};
+};
+
+&snfc {
+	nand@0 {
+		   compatible = "jedec,spi-nand";
+		   reg = <0>;
+		   spi-max-frequency = <200000000>;
+	};
+};
+
+&mmc0 {
+	status = "okay";
+};
+
+&sdio0 {
+	status = "disabled";
+};
+
+&sdio1 {
+	status = "okay";
+};
+
+&gpio_chip0 {
+	status = "okay";
+};
+
+&gpio_chip1 {
+	status = "okay";
+};
+
+&gpio_chip2 {
+	status = "okay";
+};
+
+&gpio_chip3 {
+	status = "okay";
+};
+
+&gpio_chip4 {
+	status = "okay";
+};
+
+&gpio_chip5 {
+	status = "okay";
+};
+
+&gpio_chip6 {
+	status = "okay";
+};
+
+&gpio_chip7 {
+	status = "okay";
+};
+
+&gpio_chip8 {
+	status = "okay";
+};
+
+&gpio_chip9 {
+	status = "okay";
+};
+
+&gpio_chip10 {
+	status = "okay";
+};
