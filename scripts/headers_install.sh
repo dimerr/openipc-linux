@@ -89,6 +89,11 @@ include/uapi/linux/atmdev.h:CONFIG_COMPAT
 include/uapi/linux/eventpoll.h:CONFIG_PM_SLEEP
 include/uapi/linux/hw_breakpoint.h:CONFIG_HAVE_MIXED_BREAKPOINTS_REGS
 include/uapi/linux/pktcdvd.h:CONFIG_CDROM_PKTCDVD_WCACHE
+include/uapi/linux/msdos_fs.h:CONFIG_ARCH_BSP
+include/uapi/linux/msdos_fs.h:CONFIG_BSP_FAT_OPTIMIZE
+include/uapi/linux/usb/g_uvc.h:CONFIG_ARCH_BSP
+include/uapi/linux/usb/video.h:CONFIG_ARCH_BSP
+include/uapi/linux/videodev2.h:CONFIG_ARCH_BSP
 "
 
 for c in $configs
