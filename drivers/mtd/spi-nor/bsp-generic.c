@@ -150,6 +150,7 @@ static const struct flash_info general_parts[] = {
 					PARAMS(xmc), CLK_MHZ_2X(104) },
 	{ "xm25qh128c", INFO(0x204018, 0, 64 * 1024,   256, SPI_NOR_QUAD_READ)
 					PARAMS(xmc), CLK_MHZ_2X(104) },
+	{ "by25q64", INFO(0x684017, 0, 64 * 1024,  128, 0) PARAMS(spansion), CLK_MHZ_2X(50) },
 };
 
 static void spinor_default_init(struct spi_nor *nor)
